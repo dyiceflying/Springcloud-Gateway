@@ -1,0 +1,23 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8866
+spring:
+  application:
+    name: glmapper-cloud-gateway
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lowerCaseServiceId: false
+      routes:
+      - id: glmapper
+#       uri: http://localhost:8086/hello
+        uri: lb://HELLOGLMAPPERSERVICE  # helloglmapperservice
+        predicates:
+          - Path=/gateway/**
+        filters:
+          - StripPrefix=1

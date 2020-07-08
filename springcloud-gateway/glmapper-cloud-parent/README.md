@@ -1,0 +1,1 @@
+本系列工程简单演示如何使用 SpringCloud 的各个组件，相关博客请详见:[glmapper](http://www.glmapper.com)
